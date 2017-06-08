@@ -1,0 +1,44 @@
+{% extends "ShopBundle::layout.html.twig" %}
+
+{% block title %}
+    Articles - {{ parent() }}
+{% endblock title%}
+
+{% block body %}
+
+
+
+    <!-- PRICING SECTION -->
+    <div id="dg">
+        <div class="container">
+            <div class="row centered">
+                <h4>LISTE DES ARTICLES</h4>
+                <br>
+
+                <!-- START PRICING TABLE -->
+                {% for article in articles %}
+                    <div class="col-lg-4">
+                        <div class="pricing-option">
+                            <div class="pricing-top">
+                                <span class="special-label">{{ article.title }}</span>
+                                <span class="pricing-edition"><img src="{{ asset('bundles/shop/img/'~article.thumb) }}" alt="{{ article.title }}" ></span>
+                            </div>
+                            <ul>
+                                <li><h3>{{ article.price }} €</h3></li>
+                                <li>Catégorie : <strong>{{ article.category }}</strong> </li>
+                                <li>Quantité : <strong>{{ article.quantity }}</strong></li>
+                            </ul>
+                            <a href="{{ path('detail_articles', { 'id': article.id}) }}" class="pricing-signup">Voir</a>
+                        </div><!-- /pricing-option -->
+                    </div>
+                {% endfor %}
+
+                <!-- END PRICING TABLE -->
+
+
+            </div><!-- row -->
+        </div><!-- container -->
+    </div><!-- DG -->
+
+
+{% endblock body %}
