@@ -1,4 +1,4 @@
 wesyshop
 ========
 
-A Symfony project created on June 8, 2017, 10:28 am.
+Tutoriel création d'un panier sous symfony 3
